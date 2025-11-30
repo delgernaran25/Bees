@@ -4,22 +4,34 @@
     <meta charset="UTF-8">
     <title>My Web Page</title>
     <link rel="stylesheet" href="13_11_2025.css">
-       <script>
-        <body onload="document.body.style.backgroundColor='pink’”
 
+    <script>
+        function WelcomeFunction() {
+            alert("Welcome!");
+        }
         function changeColor() {
             document.body.style.backgroundColor = "lightblue";
+        }
+        function keydownFunction() {
+            document.getElementById("name").style.backgroundColor = "yellow";
+        }
+        function keyupInputFunction() {
+            document.getElementById("name").style.backgroundColor = "lightblue";
         }
     </script>
 </head>
 
-<body>
+<body
+    onload="document.body.style.backgroundColor='pink'; WelcomeFunction()"
+    onresize="document.body.style.backgroundColor='lightblue'"
+    onkeydown="document.body.style.backgroundColor='white'"
+    onkeyup="document.body.style.backgroundColor='lightyellow'">
+      <input
+        type="text"
+        id="name"
+        onkeydown="keydownFunction()"
+        onkeyup="changeColor(); keyupInputFunction()">
 
-    <label>Enter your name: </label>
-    <input type="text" onkeyup="changeColor()">
-</head>
-
-<body>
     <p class="centered">
         <em>
             Gantogtokh Delgernaran
@@ -56,7 +68,10 @@
         <li>Bombus</li>
     </ul>
 
-    <h2 class="bees-title"><strong>Bees</strong></h2>
+    <h2 class="bees-title"
+        onmouseover="this.style.color='orange'; this.style.backgroundColor='lightgreen'"
+        onmouseout="this.style.color='red'; this.style.backgroundColor=''">
+        <strong>Bees</strong></h2>
     <p>
         <img src="bees.jpg" alt="Bees Image">
     </p>
@@ -101,6 +116,7 @@ This web page is right for you! I hope you enjoy it.
 </body>
 
 </html>
+
 
 
 
